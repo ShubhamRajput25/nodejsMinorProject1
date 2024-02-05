@@ -1,0 +1,128 @@
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .screen{
+        width: 100%;
+        height: 100vh;
+        /* display: flex; */
+        position: relative;
+        
+    }
+    .navbar{
+     width: 100%;
+    height: 50px;
+    box-shadow: 0px 0px 5px rgb(150, 147, 147);
+    }
+    .companyname{
+    font-size: 28px;
+    font-weight: 800;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+
+    .profile{
+        width: 300px;
+        height: 475px;
+        /* background-color: #f6f5edfa; */
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .profile-details{
+        width: 210;
+        height: 250;
+        /* background-color: red; */
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        margin-top: 10px;
+        box-shadow: 0px 0px 5px rgb(150, 147, 147);
+        position: relative;
+    }
+    .events{
+        width: 210;
+        height: 220;
+        /* background-color: red; */
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        margin-top: 10px;
+        box-shadow: 0px 0px 5px rgb(150, 147, 147);
+    }
+    .image img{
+        width: 90;
+        height: 90;
+        border-radius: 50%;
+    }
+    .image{
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+    .mainbodybox{
+        display: flex;
+    } 
+
+    .show{
+        margin-top: 10px;
+        width:850 ;
+        height: 89vh;
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+<html>
+    <div class="screen">
+        <div class="navbar">
+            <div class="companyname">Alpha Software</div>
+        </div>
+
+        <div class="mainbodybox">
+
+        <div class="profile">
+
+            <div class="profile-details">
+                <div class="image">
+                    <img src="/public/images/<%= data.picture %>">
+                </div>
+    
+                <div style="position: absolute; top: 28; right: 28;">
+                   <a href="/employee/editprofile"  style="text-decoration: none; color: black;"><div style="width: 10px; height: 10px;"><img src="/public/images/editicon.png"  width="100%"></div></a>
+                </div>
+
+                <div style="font-size: 20; font-weight: 600; margin-top: 10px;"><%= data.adminname %></div>
+                <div  style="font-size: 14; font-weight: 400; margin-top: 10px;"><%= data.emailid %> </div>   
+            </div>
+
+
+            <div class="events">
+                <div style="font-size: 17; font-weight: 600; margin-top: 20px;"><a href="/employee/employeeform" target="mc" style="text-decoration: none; color: black;">Add New Employee</a></div>
+
+                <div style="font-size: 17; font-weight: 600; margin-top: 20px;"><a href="/showresult/showemployeedata" target="mc" style="text-decoration: none; color: black;">Employee List</a></div>
+
+                <div style="font-size: 17; font-weight: 600; margin-top: 20px;"><a href="/showresult/searchbar" target="mc" style="text-decoration: none; color: black;">Search Employee</a></div>
+
+               <a href="/employee/logoutpopup"  style="text-decoration: none; color: black;">  <div style="font-size: 17; font-weight: 600; margin-top: 20px;">Logout</div> </a>
+
+               <a href="/employee/blankfile" target="mc" style="text-decoration: none; color: black;">  <div style="font-size: 17; font-weight: 600; margin-top: 20px;">Home</div> </a>
+
+            </div>
+    
+            </div>
+
+           
+        <div class="show" >
+            <iframe name="mc" src="/employee/blankfile" frameborder="0" style="width: 850; height: 475;"></iframe>
+        </div>
+
+        </div>
+    </div>
+</html>
